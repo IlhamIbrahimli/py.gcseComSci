@@ -1,0 +1,10 @@
+message="I love Computer Science"
+print(message[3])
+print(message[5])
+print(len(message))
+print(message[-1])
+print(message[:4])
+print(message[7:15])
+print(message + "!")
+print(message.upper())
+print("C" in message)
