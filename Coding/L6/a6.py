@@ -25,7 +25,7 @@ if count <= 10:
 username = ""
 password = ""
 valid_details = False
-
+count = 0
 print("Please login to continue..")
 
 while valid_details == False:
@@ -34,18 +34,30 @@ while valid_details == False:
 
     if username == "bob" and password == "letmein":
         valid_details = True
+        print("You're in!")
     else:
         print("Incorrect details. Please try again.")
+        count+=1
 
-print("You're in!")
+    if count == 3:
+        print("You are locked out of the system.")
+        break
+    
+
+
 
 # Task 3 - Character counter
 # ---------------------------
 # Write a program that asks the user to enter a string of text and counts the number of vowels it contains.
 # Use a for loop to iterate through each character one-by-one, testing if it is a vowel and adding to a running
 # total if it is.
+inpStr = input("Enter text:")
+vowelNum = 0
+for i in inpStr:
+    if i.lower() in ["a","e","i","o","u"]:
+        vowelNum += 1
 
-
+print(vowelNum)
 
 # Task 4 - Menu-driven program
 # -----------------------------
@@ -58,7 +70,7 @@ while choice != "Q":
     print("--------------------------------")
     print("1. Tell me a joke")
     print("2. Sing me a song")
-    # Add your additional option to the menu
+    print("3. Calculate area of a triangle")
     print("Q. Quit")
     print("--------------------------------")
     print()
@@ -104,5 +116,10 @@ while choice != "Q":
 
         input("Press Enter to return to the menu...")
 
-    # Add the code to handle your third option
+    elif choice == "3":
+        base = int(input("Enter base of triangle:"))
+        height = int(input("Enter height of triangle"))
+        area = (base*height)/2
+        print(area)
+        input("Press Enter to return to the menu...")
 
